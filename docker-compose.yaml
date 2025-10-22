@@ -1,6 +1,6 @@
 services:
   apache:
-    build: ./apache
+    build: docker/apache
     container_name: apache
     ports:
       - "80:80"
@@ -25,7 +25,7 @@ services:
 #    ports:
 #      - "8080:8080"
   bind9:
-    build: ./bind
+    build: docker/bind
     container_name: bind9
     ports:
       - "8053:53/udp"
