@@ -1,11 +1,13 @@
 services:
+
   apache:
     build: docker/apache
     container_name: apache
     ports:
       - "80:80"
     volumes:
-      - ../public:/var/www/html
+      - ./:/var/www/pokedock
+
   mariadb:
     image: mariadb:latest
     container_name: mariadb
@@ -24,12 +26,12 @@ services:
 #    restart: always
 #    ports:
 #      - "8080:8080"
-  bind9:
-    build: docker/bind
-    container_name: bind9
-    ports:
-      - "53:53/udp"
-      - "53:53/tcp"
+#  bind9:
+#    build: docker/bind
+#    container_name: bind9
+#    ports:
+#      - "53:53/udp"
+#      - "53:53/tcp"
 #    image: ubuntu:latest
 #    container_name: ubu
 #    tty: true
